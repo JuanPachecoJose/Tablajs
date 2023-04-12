@@ -1,9 +1,24 @@
-function readOnly() {
-	var celdas = document.querySelectorAll('#miTabla td[contenteditable="true"]');
-	celdas.forEach(function(celda) {
-		celda.setAttribute('contenteditable', 'false');
-	});
-}
+//function readOnly() {
+//	var celdas = document.querySelectorAll('#miTabla td[contenteditable="true"]');
+//	celdas.forEach(function(celda) {
+//		celda.setAttribute('contenteditable', 'false');
+//	});
+//}
+
+const onlyread = document.getElementById('onlyread');
+let isActive = false;
+
+onlyread.addEventListener('click', () => {
+	if (isActive) {
+	  // Deshacer la acción
+	  onlyread.textContent = 'Activar';
+	  isActive = false;
+	} else {
+	  // Realizar la acción
+	  onlyread.textContent = 'Desactivar';
+	  isActive = true;
+	}
+  });
 
 function agregarFila() {
 	var miTabla = document.getElementById('miTabla');
